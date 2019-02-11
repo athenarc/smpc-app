@@ -1,0 +1,16 @@
+.navbar-brand {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 10px;
+  }
+}
+
+.header {
+  height: 100px;
+
+  .navbar, .navbar-brand, img {
+    height: 100%;
+  }
+}
