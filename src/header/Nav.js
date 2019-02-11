@@ -18,6 +18,9 @@ const Nav = ({ ...props }) => {
           <li className='nav-item'>
             <NavLink className='nav-link' to='/classification' activeClassName='active'>Data classification</NavLink>
           </li>
+          <li className='nav-item'>
+            <NavLink className='nav-link' to='/results' activeClassName='active'>Results</NavLink>
+          </li>
         </ul>
       </div>
     </nav>
