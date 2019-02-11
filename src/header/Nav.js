@@ -1,21 +1,22 @@
 import React from 'react'
+import { NavLink, Link } from 'react-router-dom'
 
 import logo from '../assets/images/mhmd_logo_color.svg'
 
 const Nav = ({ ...props }) => {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-      <a className='navbar-brand title'>
+      <Link className='navbar-brand title' to='/'>
         <img src={logo} alt='mhmd' />
         <span>MHMD: Secure Analytics</span>
-      </a>
+      </Link>
       <div className='collapse navbar-collapse' id='navbarNav'>
         <ul className='navbar-nav'>
           <li className='nav-item'>
-            <a className='nav-link' href='#'>Data aggregation</a>
+            <NavLink className='nav-link' to='/aggregation' activeClassName='active'>Data aggregation</NavLink>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='#'>Data classification</a> 
+            <NavLink className='nav-link' to='/classification' activeClassName='active'>Data classification</NavLink>
           </li>
         </ul>
       </div>
