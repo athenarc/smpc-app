@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <main className="App">
+        <main className="container main">
           {switchRoutes}
         </main>
       </div>
