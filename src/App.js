@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import $ from 'jquery'
+import Popper from 'popper.js'
+import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 import Header from './header/Header'
 
@@ -21,16 +21,16 @@ const switchRoutes = (
 )
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <div>
         <Header />
-        <main className="container main">
+        <main className='main' role='main'>
           {switchRoutes}
         </main>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
