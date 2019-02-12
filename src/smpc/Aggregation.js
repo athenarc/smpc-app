@@ -1,9 +1,10 @@
 import React from 'react'
+import HistogramForm from '../forms/HistogramForm'
 
 class Aggregation extends React.Component {
   render() {
     return (
-      <section className='home'>
+      <section className='aggregation'>
         <div className='jumbotron'>
           <div className='container'>
             <h1 className='display-4'>Secure Data Aggregation</h1>
@@ -29,6 +30,9 @@ class Aggregation extends React.Component {
             numerical values – not normalized.
             </p>
           </div>
+        </div>
+        <div className='container'>
+          <HistogramForm />
         </div>
       </section>
     )
