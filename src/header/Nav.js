@@ -7,7 +7,7 @@ const Nav = ({ ...props }) => {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
       <Link className='navbar-brand title' to='/'>
-        <img src={logo} alt='mhmd' />
+        <img src={logo} alt='mhmd' className='logo' />
         <span>MHMD: Secure Analytics</span>
       </Link>
       <div className='collapse navbar-collapse' id='navbarNav'>
