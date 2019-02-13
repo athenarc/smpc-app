@@ -8,7 +8,20 @@
   }
 }
 
-.repeatable-field {
+.repeatable-fields {
+  .repeatable-field {
+    display: flex;
+
+    .form-row {
+      flex-grow: 1;
+    }
+
+    .close {
+      margin-left: 15px;
+      font-size: 36px;
+      margin-top: 13px;
+    }
+  }
   .add-btn {
     text-align: right;
 
