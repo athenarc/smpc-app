@@ -17,11 +17,11 @@ class Results extends React.Component {
         <div className='container'>
           <form>
             <div className='form-group'>
-              <label for='exampleInputEmail1'>Computation ID</label>
+              <label htmlFor='exampleInputEmail1'>Computation ID</label>
               <input type='text' className='form-control' id='computation-id' aria-describedby='emailHelp' />
               <small id='computation-help' className='form-text text-muted'>The ID of your computation</small>
             </div>
-            <button type='submit' class='btn btn-primary'>Submit</button>
+            <button type='submit' className='btn btn-primary'>Submit</button>
           </form>
         </div>
       </section>
