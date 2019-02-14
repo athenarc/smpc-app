@@ -1,4 +1,5 @@
 import React from 'react'
+import ClassificationForm from '../forms/ClassificationForm'
 
 class Classification extends React.Component {
   render() {
@@ -26,6 +27,9 @@ class Classification extends React.Component {
             numerical values – not normalized.
             </p>
           </div>
+        </div>
+        <div className='container'>
+          <ClassificationForm />
         </div>
       </section>
     )
