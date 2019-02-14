@@ -11,7 +11,9 @@ export default function withForm (FormComponent) {
 
     render () {
       return (
-        <FormComponent onSubmit={this.onSubmit} />
+        <div className='my-3 p-3 bg-white rounded shadow-sm'>
+          <FormComponent onSubmit={this.onSubmit} />
+        </div>
       )
     }
   }
