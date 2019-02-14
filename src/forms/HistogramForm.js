@@ -1,5 +1,4 @@
 import React from 'react'
-import { Form } from 'react-final-form'
 
 import HistogramFormComponent from './HistogramFormComponent'
 import withForm from './FormHOC'
