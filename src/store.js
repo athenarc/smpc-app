@@ -20,7 +20,7 @@ const store = createStore(
 
 store.subscribe(throttle(() => {
   saveState({
-    requests: store.getState().requests
+    computations: store.getState().computations
   })
 }), 1000)
 
