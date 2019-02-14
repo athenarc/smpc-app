@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import requests from './requests'
+import computations from './computations'
 
 const app = combineReducers({
-  requests
+  computations
 })
 
 export default app
