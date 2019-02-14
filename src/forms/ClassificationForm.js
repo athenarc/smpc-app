@@ -5,10 +5,6 @@ import withForm from './FormHOC'
 
 const FormComponent = withForm(ClassificationFormComponent)
 
-class ClassificationForm extends React.Component {
-  render () {
-    return <FormComponent />
-  }
-}
+const ClassificationForm = () => <FormComponent />
 
 export default ClassificationForm

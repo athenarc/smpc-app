@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field } from 'react-final-form'
 
-const ClassificationFormGroup = ({ ...props }) => {
+const ClassificationFormGroup = ({ attributes }) => {
   return (
     <div className='form-row filters'>
       <div className='form-group col-md-4'>
@@ -17,7 +17,7 @@ const ClassificationFormGroup = ({ ...props }) => {
         <Field id={`classification.attribute`} name={`classification.attribute`} component='select' className='custom-select'>
           <option />
           {
-            props.attributes.map(attr =>
+            attributes.map(attr =>
               <option value={attr} key={attr}>{attr}</option>
             )
           }

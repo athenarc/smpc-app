@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Form, Field } from 'react-final-form'
 
 import CheckStatus from './CheckStatus'
 import ComputationList from './ComputationList'
@@ -17,7 +16,6 @@ class Computation extends React.Component {
   }
 
   onSubmit (values) {
-    console.log(values)
     this.props.actions.checkComputationStatus({id: values.computationID})
   }
 
@@ -41,7 +39,7 @@ class Computation extends React.Component {
           </div>
           <div className='my-3 p-3 bg-white rounded shadow-sm'>
             <h6 className='border-bottom border-gray pb-2 mb-0'>Check status</h6>
-            <CheckStatus />
+            <CheckStatus onSubmit={this.onSubmit} />
           </div>
         </div>
       </section>

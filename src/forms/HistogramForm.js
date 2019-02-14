@@ -5,10 +5,6 @@ import withForm from './FormHOC'
 
 const FormComponent = withForm(HistogramFormComponent)
 
-class HistogramForm extends React.Component {
-  render () {
-    return <FormComponent />
-  }
-}
+const HistogramForm = () => <FormComponent />
 
 export default HistogramForm

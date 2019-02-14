@@ -2,11 +2,11 @@ import React from 'react'
 
 import SingleComputation from './SingleComputation'
 
-const ComputationList = ({ ...props }) => {
+const ComputationList = ({ computations }) => {
   return (
     <section className='computations'>
       {
-        props.computations.map((computation) =>
+        computations.map((computation) =>
           <SingleComputation {...computation} key={computation.id} />
         )
       }

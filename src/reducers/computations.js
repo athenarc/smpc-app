@@ -5,10 +5,6 @@ const findComputationById = (arr, id) => {
   return arr.findIndex((item) => item.id === id)
 }
 
-const includesComputation = (arr, computation) => {
-    return arr.map(item => item.id).includes(computation.id)
-}
-
 const computations = createReducer([], {
   [types.ADD_COMPUTATION]: (state, action) => { return [ ...state ] },
   [types.SUBMIT_COMPUTATION_SUCCESS]: (state, action) => { return [ ...state, { ...action.payload.data } ] },

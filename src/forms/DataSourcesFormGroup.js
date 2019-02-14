@@ -1,8 +1,8 @@
 import React from 'react'
 import { Field } from 'react-final-form'
 
-const DataSourceFormGroup = ({ ...props }) => {
-  return (  
+const DataSourceFormGroup = () => {
+  return (
     <div className='form-group form-check form-check-inline datasources'>
       <div className='custom-control custom-switch datasource'>
         <Field type='checkbox' value='data-provider-1' name='data-providers' id='data-provider-1' component='input' className='custom-control-input' />

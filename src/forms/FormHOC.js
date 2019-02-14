@@ -7,7 +7,9 @@ export default function withForm (FormComponent) {
       this.onSubmit = this.onSubmit.bind(this)
     }
 
-    onSubmit () {}
+    onSubmit (request) {
+      console.log('submit', request)
+    }
 
     render () {
       return (
