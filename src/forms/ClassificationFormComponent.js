@@ -26,6 +26,9 @@ class ClassificationFormComponent extends React.Component {
         values
       }) => (
         <form onSubmit={handleSubmit}>
+          <h4 className='mb-3'>Classification Information</h4>
+          <ClassificationFormGroup attributes={attributes.cvi} />
+          <hr className='mb-4' />
           <h4 className='mb-3'>Attributes</h4>
           <AttributeRepeatableRow push={push}/>
           <hr className='mb-4' />
