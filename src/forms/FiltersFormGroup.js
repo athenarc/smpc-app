@@ -8,7 +8,11 @@ const FilterFormGroup = ({ ...props }) => {
         <label htmlFor={`${props.name}.attribute`}>Attribute</label>
         <Field id={`${props.name}.attribute`} name={`${props.name}.attribute`} component='select' className='custom-select'>
           <option />
-          <option value='age'>Age</option>
+          {
+            props.attributes.map(attr =>
+              <option value={attr} key={attr}>{attr}</option>
+            )
+          }
         </Field>
       </div>
       <div className='form-group col-md-4'>

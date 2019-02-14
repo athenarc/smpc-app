@@ -7,6 +7,8 @@ import FiltersFormGroup from './FiltersFormGroup'
 import AttributesFormGroup from './AttributesFormGroup'
 import withRepeatableRow from './RepeatableRow'
 
+import attributes from '../attributes.json'
+
 const AttributeRepeatableRow = withRepeatableRow(AttributesFormGroup, 'attributes')
 const FilterRepeatableRow = withRepeatableRow(FiltersFormGroup, 'filters')
 
@@ -27,10 +29,10 @@ class HistogramFormComponent extends React.Component {
       }) => (
         <form onSubmit={handleSubmit}>
           <h4 className='mb-3'>Attributes</h4>
-          <AttributeRepeatableRow push={push}/>
+          <AttributeRepeatableRow push={push} attributes={attributes.cvi} />
           <hr className='mb-4' />
           <h4 className='mb-3'>Filters</h4>
-          <FilterRepeatableRow push={push} />
+          <FilterRepeatableRow push={push} attributes={attributes.cvi} />
           <hr className='mb-4' />
           <h4 className='mb-3'>Datasources</h4>
           <hr className='mb-4' />
