@@ -10,7 +10,7 @@ import withRepeatableRow from './RepeatableRow'
 const AttributeRepeatableRow = withRepeatableRow(AttributesFormGroup, 'attributes')
 const FilterRepeatableRow = withRepeatableRow(FiltersFormGroup, 'filters')
 
-class HistogramForm extends React.Component {
+class HistogramFormComponent extends React.Component {
   render () {
     return <Form
       onSubmit={this.props.onSubmit}
@@ -43,4 +43,4 @@ class HistogramForm extends React.Component {
   }
 }
 
-export default HistogramForm
+export default HistogramFormComponent
