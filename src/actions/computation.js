@@ -17,7 +17,7 @@ const checkComputationStatus = createAPIAction({
 const addComputation = createSimpleAction(types.ADD_COMPUTATION)
 
 export {
-  requestComputation,
-  checkComputationStatus
+  requestHistCategorical,
+  checkComputationStatus,
   addComputation
 }

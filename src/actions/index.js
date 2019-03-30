@@ -1,12 +1,11 @@
 import {
-  requestComputation,
-  checkComputationStatus
+  requestHistCategorical,
+  checkComputationStatus,
   addComputation
 } from './computation'
 
-export {
-  requestComputation,
 export default {
+  requestHistCategorical,
   checkComputationStatus,
   addComputation
 }
