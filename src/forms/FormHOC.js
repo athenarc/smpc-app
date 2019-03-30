@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
-export default function withForm (FormComponent) {
+import actions from '../actions'
+
 export default function withForm (FormComponent, options = {}) {
   class Form extends React.Component {
     constructor() {
@@ -10,6 +13,9 @@ export default function withForm (FormComponent, options = {}) {
 
     onSubmit (request) {
       console.log('submit', request)
+      this.props.actions[options.action]({}, request).then((res) => {
+        this.props.actions.addComputation(res)
+      })
     }
 
     render () {
@@ -21,5 +27,9 @@ export default function withForm (FormComponent, options = {}) {
     }
   }
 
-  return Form
+  const mapStateToProps = (state, ownProps) => ({ computations: state.computations })
+
+  const mapDispatchToProps = dispatch => ({ actions: bindActionCreators({ [options.action]: actions[options.action], addComputation: actions.addComputation }, dispatch) })
+
+  return connect(null, mapDispatchToProps)(Form)
 }
