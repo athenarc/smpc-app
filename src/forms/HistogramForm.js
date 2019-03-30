@@ -3,7 +3,7 @@ import React from 'react'
 import HistogramFormComponent from './HistogramFormComponent'
 import withForm from './FormHOC'
 
-const FormComponent = withForm(HistogramFormComponent)
+const FormComponent = withForm(HistogramFormComponent, { action: 'requestHistCategorical' } )
 
 const HistogramForm = () => <FormComponent />
 

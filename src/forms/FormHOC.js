@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function withForm (FormComponent) {
+export default function withForm (FormComponent, options = {}) {
   class Form extends React.Component {
     constructor() {
       super()
