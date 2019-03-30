@@ -34,7 +34,7 @@ const createAPIAction = ({ url, action = 'get', beforeAction, afterAction }) => 
 
       normalizedURL = Object.keys(routeParameters).reduce((prev, cur) => prev.replace(`:${cur}`, routeParameters[cur]), normalizedURL)
 
-      const res = await axios[action](normalizedURL)
+      const res = await axios[action](normalizedURL, requestData)
 
       dispatch(afterAction(res.data))
     }
