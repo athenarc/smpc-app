@@ -14,7 +14,10 @@ const checkComputationStatus = createAPIAction({
   afterAction: createSimpleAction(types.CHECK_COMPUTATION_STATUS_SUCCESS)
 })
 
+const addComputation = createSimpleAction(types.ADD_COMPUTATION)
+
 export {
   requestComputation,
   checkComputationStatus
+  addComputation
 }
