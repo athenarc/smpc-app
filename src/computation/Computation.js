@@ -5,9 +5,8 @@ import { bindActionCreators } from 'redux'
 import CheckStatus from './CheckStatus'
 import ComputationList from './ComputationList'
 
-import {
-  checkComputationStatus
-} from '../actions'
+import actions from '../actions'
+const checkComputationStatus = actions.checkComputationStatus
 
 class Computation extends React.Component {
   constructor () {

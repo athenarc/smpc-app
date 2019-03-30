@@ -5,5 +5,6 @@ import {
 
 export {
   requestComputation,
-  checkComputationStatus
+export default {
+  checkComputationStatus,
 }
