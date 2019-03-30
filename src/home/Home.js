@@ -27,7 +27,7 @@ const Home = ({ ...props }) => {
       </div>
       <div className='container'>
         <div className='row'>
-          <div className='col-sm-6'>
+          <div className='col-sm-12'>
             <div className='card'>
               <div className='card-body'>
                 <h5 className='card-title'>Secure data aggregation</h5>
@@ -37,18 +37,6 @@ const Home = ({ ...props }) => {
                 histograms.
                 </p>
                 <Link to='/aggregation' className='btn btn-primary'>Request computation</Link>
-              </div>
-            </div>
-          </div>
-          <div className='col-sm-6'>
-            <div className='card'>
-              <div className='card-body'>
-                <h5 className='card-title'>Secure data classification</h5>
-                <p className='card-text'>
-                  Generate decision trees from patient data using the privacy-preserving ID3
-                  classifier.
-                </p>
-                <Link to='/classification' className='btn btn-primary'>Request computation</Link>
               </div>
             </div>
           </div>

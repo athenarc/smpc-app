@@ -6,7 +6,6 @@ import Computation from '../computation/Computation'
 const appRoutes = [
   { path: '/', component: Home },
   { path: '/aggregation', component: Aggregation },
-  { path: '/classification', component: Classification },
   { path: '/computation', component: Computation }
 ]
 
