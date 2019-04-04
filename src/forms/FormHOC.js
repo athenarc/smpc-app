@@ -6,7 +6,7 @@ import actions from '../actions'
 
 export default function withForm (FormComponent, options = {}) {
   class Form extends React.Component {
-    constructor() {
+    constructor () {
       super()
       this.onSubmit = this.onSubmit.bind(this)
     }
@@ -14,7 +14,7 @@ export default function withForm (FormComponent, options = {}) {
     onSubmit (request) {
       console.log('submit', request)
       this.props.actions[options.action]({}, request).then((res) => {
-        this.props.actions.addComputation(res)
+        this.props.actions.addNotification(res)
       })
     }
 
@@ -27,9 +27,7 @@ export default function withForm (FormComponent, options = {}) {
     }
   }
 
-  const mapStateToProps = (state, ownProps) => ({ computations: state.computations })
-
-  const mapDispatchToProps = dispatch => ({ actions: bindActionCreators({ [options.action]: actions[options.action], addComputation: actions.addComputation }, dispatch) })
+  const mapDispatchToProps = dispatch => ({ actions: bindActionCreators({ [options.action]: actions[options.action], addComputation: actions.addComputation, addNotification: actions.addNotification }, dispatch) })
 
   return connect(null, mapDispatchToProps)(Form)
 }

@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import $ from 'jquery'
-import Popper from 'popper.js'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 import Header from './header/Header'
+import NotificationService from './notification/NotificationService'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/scss/main.scss'
@@ -25,6 +24,7 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <NotificationService />
         <main className='main' role='main'>
           {switchRoutes}
         </main>
