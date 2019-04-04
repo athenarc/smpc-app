@@ -18,6 +18,10 @@ class Computation extends React.Component {
     this.props.actions.checkComputationStatus({id: values.computationID})
   }
 
+  checkStatus (id) {
+    this.props.actions.checkComputationStatus({ id })
+  }
+
   render () {
     return (
       <section className='home'>
@@ -34,7 +38,7 @@ class Computation extends React.Component {
         <div className='container'>
           <div className='my-3 p-3 bg-white rounded shadow-sm'>
             <h6 className='border-bottom border-gray pb-2 mb-0'>Recent computations</h6>
-            <ComputationList computations={this.props.computations} />
+            <ComputationList computations={this.props.computations} checkStatus={(id) => this.checkStatus(id)} />
           </div>
           <div className='my-3 p-3 bg-white rounded shadow-sm'>
             <h6 className='border-bottom border-gray pb-2 mb-0'>Check status</h6>

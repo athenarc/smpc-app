@@ -1,10 +1,13 @@
 import React from 'react'
 
-const SingleComputation = ({ status, id }) => {
+const SingleComputation = ({ status, id, checkStatus }) => {
   return (
-    <div className='media text-muted pt-3' >
+    <div className='media text-muted border-bottom border-gray single-computation' >
       <span className='badge badge-primary mr-2'>{status}</span>
-      <span className='media-body pb-3 mb-0 small lh-125 border-bottom border-gray'>{id}</span>
+      <span className='media-body mb-0 small'>
+        {id}
+      </span>
+      <button type='button' class='btn btn-outline-dark btn-sm' onClick={() => checkStatus(id)}>Refresh</button>
     </div>
   )
 }
