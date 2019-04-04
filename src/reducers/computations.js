@@ -6,10 +6,9 @@ const findComputationById = (arr, id) => {
 }
 
 const computations = createReducer([], {
-  [types.ADD_COMPUTATION]: (state, action) => { return [ ...state,  ...action.payload.data ] },
+  [types.ADD_COMPUTATION]: (state, action) => { return [ ...state, ...action.payload.data ] },
   [types.SUBMIT_COMPUTATION_SUCCESS]: (state, action) => { return [ ...state, { ...action.payload.data } ] },
   [types.CHECK_COMPUTATION_STATUS_SUCCESS]: (state, action) => {
-
     let computationIndex = findComputationById(state, action.payload.data.id)
 
     if (computationIndex !== -1) {
