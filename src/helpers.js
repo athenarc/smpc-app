@@ -37,6 +37,7 @@ const createAPIAction = ({ url, action = 'get', beforeAction, afterAction }) => 
       const res = await axios[action](normalizedURL, requestData)
 
       dispatch(afterAction(res.data))
+      return res.data
     }
   }
 }
