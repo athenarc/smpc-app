@@ -6,7 +6,7 @@ const AttributesFormGroup = ({ name, attributes }) => {
     <div className='form-row filters'>
       <div className='form-group col-md-6'>
         <label htmlFor={`${name}.attribute`}>Attribute</label>
-        <Field id={`${name}.attribute`} name={`${name}.attribute`} component='select' className='custom-select'>
+        <Field id={`${name}.name`} name={`${name}.name`} component='select' className='custom-select'>
           <option />
           {
             attributes.map(attr =>
