@@ -11,10 +11,13 @@ export default function withForm (FormComponent, options = {}) {
       this.onSubmit = this.onSubmit.bind(this)
     }
 
+    prepareMessage (res) {
+      return <span> Computation accepted! <br />ID: <b>{res.id}</b></span>
+    }
+
     onSubmit (request) {
-      console.log('submit', request)
       this.props.actions[options.action]({}, request).then((res) => {
-        this.props.actions.addNotification(res)
+        this.props.actions.addNotification({ msg: this.prepareMessage(res) })
       })
     }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+
 const Toast = ({ ...props }) => {
   return (
     <div className='toast show' role='alert' aria-live='assertive' aria-atomic='true'>
@@ -10,8 +11,7 @@ const Toast = ({ ...props }) => {
         </button>
       </div>
       <div className='toast-body'>
-        Computation accepted! <br />
-        ID: <b>{props.id}</b>
+        {props.msg}
       </div>
     </div>
   )

@@ -16,8 +16,8 @@ class NotificationService extends Component {
     return (
       <div className='toasts-wrapper' aria-live='polite' aria-atomic='true'>
         {
-          this.props.notifications.map((notification) =>
-            <Toast {...notification} key={notification.id} onClose={() => this.closeNotification(notification.id)} />
+          this.props.notifications.map((notification, index) =>
+            <Toast {...notification} key={index} onClose={() => this.closeNotification(notification.id)} />
           )
         }
       </div>
