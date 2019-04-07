@@ -16,9 +16,9 @@ export default function withRepeatableRow (Field, key) {
                   fields.map((name, index) => (
                     <div className='repeatable-field' key={name}>
                       <Field name={name} index={index} attributes={this.props.attributes} />
-                        <button type='button' className={classNames('close', {invisible: (index === 0)})} aria-label='Close' onClick={() => fields.remove(index)} >
-                          <span aria-hidden='true'>&times;</span>
-                        </button>
+                      <button type='button' className={classNames('close', {invisible: (index === 0)})} aria-label='Close' onClick={() => fields.remove(index)} >
+                        <span aria-hidden='true'>&times;</span>
+                      </button>
                     </div>
                   ))}
           </FieldArray>
