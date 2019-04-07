@@ -5,7 +5,10 @@ import { Provider } from 'react-redux'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
+import { setupInterceptors } from './interceptors'
 import store from './store'
+
+setupInterceptors(store)
 
 ReactDOM.render(
   <BrowserRouter>
