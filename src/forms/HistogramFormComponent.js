@@ -28,10 +28,10 @@ const HistogramFormComponent = ({ onSubmit }) => {
     }) => (
       <form onSubmit={handleSubmit}>
         <h4 className='mb-3'>Attributes</h4>
-        <AttributeRepeatableRow push={push} attributes={attributes.cvi} />
+        <AttributeRepeatableRow push={push} attributes={attributes} />
         <hr className='mb-4' />
         <h4 className='mb-3'>Filters</h4>
-        <FilterRepeatableRow push={push} attributes={attributes.cvi} />
+        <FilterRepeatableRow push={push} attributes={attributes} />
         <hr className='mb-4' />
         <h4 className='mb-3'>Datasources</h4>
         <hr className='mb-4' />
