@@ -5,7 +5,7 @@ let hideTimeout
 const addNotification = (data = {}) => {
   return dispatch => {
     clearTimeout(hideTimeout)
-    hideTimeout = setTimeout(dispatch.bind({}, closeNotification(data)), 7000)
+    hideTimeout = setTimeout(dispatch.bind({}, closeNotification(data)), 10000)
     dispatch({ type: types.ADD_NOTIFICATION, payload: { data } })
   }
 }
