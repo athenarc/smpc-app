@@ -36,7 +36,7 @@ const Home = ({ ...props }) => {
                 algorithms for computing and visualizing multi-dimemsional
                 histograms.
                 </p>
-                <Link to='/aggregation' className='btn btn-primary'>Request computation</Link>
+                <Link to='/computation' className='btn btn-primary'>Request computation</Link>
               </div>
             </div>
           </div>
