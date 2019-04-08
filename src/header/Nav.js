@@ -13,7 +13,7 @@ const Nav = ({ ...props }) => {
       <div className='collapse navbar-collapse' id='navbarNav'>
         <ul className='navbar-nav'>
           <li className='nav-item'>
-            <NavLink className='nav-link' to='/aggregation' activeClassName='active'>Data aggregation</NavLink>
+            <NavLink className='nav-link' to='/histogram' activeClassName='active'>Data aggregation</NavLink>
           </li>
           <li className='nav-item'>
             <NavLink className='nav-link' to='/computation' activeClassName='active'>Computations</NavLink>

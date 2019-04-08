@@ -1,13 +1,13 @@
 import React from 'react'
 import HistogramForm from '../forms/HistogramForm'
 
-class Aggregation extends React.Component {
-  render() {
+class Histogram extends React.Component {
+  render () {
     return (
       <section className='aggregation'>
         <div className='jumbotron'>
           <div className='container'>
-            <h1 className='display-4'>Secure Data Aggregation</h1>
+            <h1 className='display-4'>Secure Histograms</h1>
             <p className='lead'>Perform analytics using privacy-preserving data aggregation algorithms for computing and visualizing multi-dimemsional histograms.</p>
             <hr className='my-4' />
             <p>
@@ -39,4 +39,4 @@ class Aggregation extends React.Component {
   }
 }
 
-export default Aggregation
+export default Histogram

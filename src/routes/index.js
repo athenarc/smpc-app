@@ -1,11 +1,11 @@
 import Home from '../home/Home'
-import Aggregation from '../smpc/Aggregation'
+import Histogram from '../smpc/Histogram'
 import Computation from '../computation/Computation'
 import ComputationDetail from '../computation/ComputationDetail'
 
 const appRoutes = [
   { path: '/', component: Home },
-  { path: '/aggregation', component: Aggregation },
+  { path: '/histogram', component: Histogram },
   { path: '/computation', component: Computation },
   { path: '/computation/:id', component: ComputationDetail }
 ]
