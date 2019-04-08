@@ -17,7 +17,7 @@ export default function withForm (FormComponent, options = {}) {
 
     onSubmit (request) {
       this.props.actions[options.action]({}, request).then((res) => {
-        this.props.actions.addNotification({ msg: this.prepareMessage(res) })
+        this.props.actions.addNotification({ msg: this.prepareMessage(res), type: 'success', title: 'Success' })
       })
     }
 

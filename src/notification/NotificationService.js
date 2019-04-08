@@ -7,6 +7,12 @@ import Toast from './Toast'
 import actions from '../actions'
 const closeNotification = actions.closeNotification
 
+const types = {
+  'error': 'text-danger',
+  'success': 'text-success',
+  'warning': 'text-warning',
+}
+
 class NotificationService extends Component {
   closeNotification (id) {
     this.props.actions.closeNotification({ id })
@@ -17,7 +23,7 @@ class NotificationService extends Component {
       <div className='toasts-wrapper' aria-live='polite' aria-atomic='true'>
         {
           this.props.notifications.map((notification, index) =>
-            <Toast {...notification} key={index} onClose={() => this.closeNotification(notification.id)} />
+            <Toast {...notification} key={index} onClose={() => this.closeNotification(notification.id)} type={types[notification.type]} />
           )
         }
       </div>

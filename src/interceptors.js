@@ -19,7 +19,7 @@ const setupInterceptors = (store) => {
 
   const responseCatch = (error) => {
     console.log(error.response)
-    store.dispatch(addNotification({ msg: error.response.data.msg }))
+    store.dispatch(addNotification({ msg: error.response.data.msg, type: 'error', title: 'Error' }))
 
     // if (!error.hasOwnProperty('response')) {
     //   store.dispatch(addNotification(`Error: ${error.message}`))
