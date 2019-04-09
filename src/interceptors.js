@@ -18,27 +18,24 @@ const setupInterceptors = (store) => {
   }
 
   const responseCatch = (error) => {
-    console.log(error.response)
-    store.dispatch(addNotification({ msg: error.response.data.msg, type: 'error', title: 'Error' }))
+    if (!error.hasOwnProperty('response') || error.response === undefined) {
+      store.dispatch(addNotification({ msg: `Error: ${error.message}`, type: 'error', title: 'Error' }))
+      return Promise.reject(error)
+    }
 
-    // if (!error.hasOwnProperty('response')) {
-    //   store.dispatch(addNotification(`Error: ${error.message}`))
-    //   return Promise.reject(error)
-    // }
-    //
-    // if (error.response.data && error.response.data.error) {
-    //   const e = error.response.data.error
-    //   store.dispatch(addNotification(e.message))
-    //   return Promise.reject(error)
-    // }
-    //
-    // if (error.response.status === 404) {
-    //   store.dispatch(addNotification('404! The page you are looking for can\'t be found'))
-    // }
-    //
-    // if (error.response.status === 500) {
-    //   store.dispatch(addNotification(`Request failed with status code 500: ${error.message}`))
-    // }
+    if (error.response.data && error.response.data.error) {
+      const e = error.response.data.error
+      store.dispatch(addNotification({ msg: e, type: 'error', title: 'Error' }))
+      return Promise.reject(error)
+    }
+
+    if (error.response.status === 404) {
+      store.dispatch(addNotification({ msg: '404! The page you are looking for cannot be found', type: 'error', title: 'Error' }))
+    }
+
+    if (error.response.status === 500) {
+      store.dispatch(addNotification({ msg: `Request failed with status code 500: ${error.message}`, type: 'error', title: 'Error' }))
+    }
 
     return Promise.reject(error)
   }
