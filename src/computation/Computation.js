@@ -7,6 +7,8 @@ import ComputationList from './ComputationList'
 
 import actions from '../actions'
 const checkComputationStatus = actions.checkComputationStatus
+const deleteComputation = actions.deleteComputation
+console.log(deleteComputation)
 
 class Computation extends React.Component {
   constructor () {
@@ -20,6 +22,10 @@ class Computation extends React.Component {
 
   checkStatus (id) {
     this.props.actions.checkComputationStatus({ id })
+  }
+
+  deleteComputation (id) {
+    this.props.actions.deleteComputation({ id })
   }
 
   render () {
@@ -38,7 +44,7 @@ class Computation extends React.Component {
         <div className='container'>
           <div className='my-3 p-3 bg-white rounded shadow-sm'>
             <h6 className='border-bottom border-gray pb-2 mb-0'>Recent computations</h6>
-            <ComputationList computations={this.props.computations} checkStatus={(id) => this.checkStatus(id)} />
+            <ComputationList computations={this.props.computations} checkStatus={(id) => this.checkStatus(id)} deleteComputation={(id) => this.deleteComputation(id)} />
           </div>
           <div className='my-3 p-3 bg-white rounded shadow-sm'>
             <h6 className='border-bottom border-gray pb-2 mb-0'>Check status</h6>
@@ -52,6 +58,6 @@ class Computation extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({ computations: state.computations })
 
-const mapDispatchToProps = dispatch => ({actions: bindActionCreators({ checkComputationStatus }, dispatch)})
+const mapDispatchToProps = dispatch => ({actions: bindActionCreators({ checkComputationStatus, deleteComputation }, dispatch)})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Computation)

@@ -1,13 +1,13 @@
 import React from 'react'
 
-import SingleComputation from './SingleComputation'
+import ComputationListItem from './ComputationListItem'
 
-const ComputationList = ({ computations, checkStatus }) => {
+const ComputationList = ({ computations, checkStatus, deleteComputation }) => {
   return (
     <section className='computations'>
       {
         computations.map((computation) =>
-          <SingleComputation {...computation} key={computation.id} checkStatus={checkStatus} />
+          <ComputationListItem {...computation} key={computation.id} checkStatus={checkStatus} deleteComputation={deleteComputation} />
         )
       }
     </section>
