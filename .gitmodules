@@ -1,0 +1,3 @@
+[submodule "src/smpc-global"]
+	path = src/smpc-global
+	url = https://github.com/Athena-MHMD/smpc-global.git
