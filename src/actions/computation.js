@@ -14,10 +14,17 @@ const checkComputationStatus = createAPIAction({
   afterAction: createSimpleAction(types.CHECK_COMPUTATION_STATUS_SUCCESS)
 })
 
+const getSingleComputation = createAPIAction({
+  url: '/smpc/queue/:id',
+  beforeAction: createSimpleAction(types.GET_SINGLE_COMPUTATION),
+  afterAction: createSimpleAction(types.GET_SINGLE_COMPUTATION_SUCCESS)
+})
+
 const addComputation = createSimpleAction(types.ADD_COMPUTATION)
 
 export {
   requestHistCategorical,
   checkComputationStatus,
-  addComputation
+  getSingleComputation,
+  addComputation,
 }

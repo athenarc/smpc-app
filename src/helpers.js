@@ -42,9 +42,14 @@ const createAPIAction = ({ url, action = 'get', beforeAction, afterAction }) => 
   }
 }
 
+const findComputationIndexById = (arr, id) => {
+  return arr.findIndex((item) => item.id === id)
+}
+
 export {
   createReducer,
   buildActionTypes,
   createSimpleAction,
-  createAPIAction
+  createAPIAction,
+  findComputationIndexById
 }

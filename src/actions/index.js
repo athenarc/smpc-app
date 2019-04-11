@@ -1,6 +1,7 @@
 import {
   requestHistCategorical,
   checkComputationStatus,
+  getSingleComputation,
   addComputation
 } from './computation'
 
@@ -15,4 +16,5 @@ export default {
   addComputation,
   addNotification,
   closeNotification
+  getSingleComputation
 }
