@@ -21,10 +21,12 @@ const getSingleComputation = createAPIAction({
 })
 
 const addComputation = createSimpleAction(types.ADD_COMPUTATION)
+const deleteComputation = createSimpleAction(types.DELETE_COMPUTATION)
 
 export {
   requestHistCategorical,
   checkComputationStatus,
   getSingleComputation,
   addComputation,
+  deleteComputation
 }

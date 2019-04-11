@@ -2,6 +2,7 @@ import { buildActionTypes } from '../helpers'
 
 const types = [
   'ADD_COMPUTATION',
+  'DELETE_COMPUTATION',
   'ADD_NOTIFICATION',
   'REMOVE_NOTIFICATION',
   'SUBMIT_COMPUTATION',

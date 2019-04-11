@@ -2,6 +2,7 @@ import {
   requestHistCategorical,
   checkComputationStatus,
   getSingleComputation,
+  deleteComputation,
   addComputation
 } from './computation'
 
@@ -14,7 +15,8 @@ export default {
   requestHistCategorical,
   checkComputationStatus,
   addComputation,
+  deleteComputation,
   addNotification,
-  closeNotification
+  closeNotification,
   getSingleComputation
 }
