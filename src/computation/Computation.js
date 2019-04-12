@@ -8,7 +8,6 @@ import ComputationList from './ComputationList'
 import actions from '../actions'
 const checkComputationStatus = actions.checkComputationStatus
 const deleteComputation = actions.deleteComputation
-console.log(deleteComputation)
 
 class Computation extends React.Component {
   constructor () {

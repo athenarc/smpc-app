@@ -11,6 +11,11 @@ import {
   closeNotification
 } from './notification'
 
+import {
+  initWebsocket,
+  emit
+} from './websocket'
+
 export default {
   requestHistCategorical,
   checkComputationStatus,
@@ -18,5 +23,7 @@ export default {
   deleteComputation,
   addNotification,
   closeNotification,
-  getSingleComputation
+  getSingleComputation,
+  initWebsocket,
+  emit
 }
