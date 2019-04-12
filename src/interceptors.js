@@ -24,9 +24,13 @@ const setupInterceptors = (store) => {
     }
 
     if (error.response.data && error.response.data.error) {
-      const e = error.response.data.error
-      store.dispatch(addNotification({ msg: e, type: 'error', title: 'Error' }))
+      const msg = error.response.data.error.msg
+      store.dispatch(addNotification({ msg, type: 'error', title: 'Error' }))
       return Promise.reject(error)
+    }
+
+    if (error.response.status === 400) {
+      store.dispatch(addNotification({ msg: '400! Bad Request', type: 'error', title: 'Error' }))
     }
 
     if (error.response.status === 404) {
