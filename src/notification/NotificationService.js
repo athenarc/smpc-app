@@ -11,6 +11,7 @@ const types = {
   'error': 'text-danger',
   'success': 'text-success',
   'warning': 'text-warning',
+  'info': 'text-info',
 }
 
 class NotificationService extends Component {
