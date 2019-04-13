@@ -94,11 +94,11 @@ class SingleComputation extends React.Component {
     const ticks = []
     for (const _ of Array(cells - 1).keys()) { // eslint-disable-line no-unused-vars
       end = start + width
-      ticks.push(`[${start}, ${end})`)
+      ticks.push(`[${start.toFixed(2)}, ${end.toFixed(2)})`)
       start = end
     }
     end = start + width
-    ticks.push(`[${start}, ${end}]`)
+    ticks.push(`[${start.toFixed(2)}, ${end.toFixed(2)}]`)
     return ticks
   }
 
