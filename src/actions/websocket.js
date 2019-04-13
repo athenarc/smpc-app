@@ -1,6 +1,6 @@
 import types from './actionTypes'
 
-const URI = process.env.WEBSOCKET_URL || 'ws://localhost:3000'
+const URI = process.env.REACT_APP_WS || 'ws://localhost:3000'
 
 const webSocket = new WebSocket(URI);
 
