@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux'
 import _ from 'lodash'
 import ComputationDetail from './ComputationDetail'
 import PlotComponent from '../plot/PlotComponent'
+import * as moment from 'moment'
+import 'moment-precise-range-plugin'
 
 import actions from '../actions'
 import { findComputationIndexById } from '../helpers'
@@ -124,6 +126,18 @@ class SingleComputation extends React.Component {
     return this.props.computations[findComputationIndexById(this.props.computations, id)]
   }
 
+  formatTimestamps (timestamps) {
+    const start = moment(timestamps.accepted).format('dddd, MMMM Do YYYY, HH:mm:ss')
+    const end = moment(timestamps.done).format('dddd, MMMM Do YYYY, HH:mm:ss')
+    const diff = moment(timestamps.accepted).preciseDiff(timestamps.done)
+    return { start, end, diff}
+  }
+
+  formatComputation () {
+    const attributes = this.state.computation.attributes.map(item => item.name).join(', ')
+    return { ...this.state.computation, attributes, time: this.formatTimestamps(this.state.computation.timestamps)}
+  }
+
   render () {
     if (!this.props.computations || _.isEmpty(this.state.computation)) {
       return null
@@ -137,7 +151,7 @@ class SingleComputation extends React.Component {
               <PlotComponent { ...this.state.plot } onInitialized={this.updatePlot} onUpdate={this.updatePlot} />
             </div>
         }
-        <ComputationDetail {...this.state.computation} />
+        <ComputationDetail {...this.formatComputation()} />
       </div>
     )
   }
