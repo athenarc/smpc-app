@@ -12,6 +12,10 @@ const DataSourceFormGroup = () => {
         <Field type='checkbox' value='data-provider-2' name='data-providers' id='data-provider-2' component='input' className='custom-control-input' />
         <label className='custom-control-label' htmlFor='data-provider-2'>Hospital B</label>
       </div>
+      <div className='custom-control custom-switch datasource'>
+        <Field type='checkbox' value='data-provider-3' name='data-providers' id='data-provider-3' component='input' className='custom-control-input' />
+        <label className='custom-control-label' htmlFor='data-provider-3'>Hospital C</label>
+      </div>
     </div>
   )
 }
