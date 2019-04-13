@@ -127,8 +127,12 @@ class SingleComputation extends React.Component {
   }
 
   formatTimestamps (timestamps) {
-    const start = moment(timestamps.accepted).format('dddd, MMMM Do YYYY, HH:mm:ss')
-    const end = moment(timestamps.done).format('dddd, MMMM Do YYYY, HH:mm:ss')
+    if (!timestamps) {
+      return { start: '', end: '', diff: '' }
+    }
+
+    const start = timestamps.accepted ? moment(timestamps.accepted).format('dddd, MMMM Do YYYY, HH:mm:ss') : ''
+    const end = timestamps.done ? moment(timestamps.done).format('dddd, MMMM Do YYYY, HH:mm:ss'): ''
     const diff = moment(timestamps.accepted).preciseDiff(timestamps.done)
     return { start, end, diff}
   }
