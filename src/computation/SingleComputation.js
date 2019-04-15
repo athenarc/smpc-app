@@ -68,8 +68,8 @@ class SingleComputation extends React.Component {
         trace.y = results.labels.y
         break;
       case '2d_numerical_histogram':
-        let width0 = (results.max[0] - results.min[0]) / 2
-        let width1 = (results.max[1] - results.min[1]) / 2
+        let width0 = (results.max[0] - results.min[0]) / results.cellsX
+        let width1 = (results.max[1] - results.min[1]) / results.cellsY
 
         trace.type = 'heatmap'
         trace.z = results.z
@@ -77,7 +77,7 @@ class SingleComputation extends React.Component {
         trace.x = this.computeAxisLabels(results.min[1], results.max[1], width1, results.cellsY)
         break;
       case '2d_mixed_histogram':
-        width = (results.max - results.min) / 2
+        width = (results.max - results.min) / results.cells
         trace.type = 'heatmap'
         trace.z = results.z
         trace.x = this.computeAxisLabels(results.min, results.max, width, results.cells)
