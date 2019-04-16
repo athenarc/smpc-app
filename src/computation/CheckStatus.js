@@ -12,8 +12,8 @@ const CheckStatus = ({ onSubmit }) => {
           <form onSubmit={handleSubmit}>
             <div className='form-group'>
               <label className='invisible' htmlFor='computation-id'>Computation ID</label>
-              <Field id='computation-id' name='computationID' component='input' className='form-control' type='text' placeholder='bca9cbff-45ef-4ae5-be35-58585b2fe1d4' />
-              <small id='email-id-help' className='form-text text-muted'>Check the status of your computation</small>
+              <Field id='computation-id' name='computationID' component='input' className='form-control' type='text' />
+              <small id='email-id-help' className='form-text text-muted'>Enter your computation's ID</small>
             </div>
             <button type='submit' className='btn btn-primary' disabled={submitting}>Submit</button>
           </form>
