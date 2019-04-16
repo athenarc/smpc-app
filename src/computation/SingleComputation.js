@@ -2,11 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import _ from 'lodash'
-import ComputationDetail from './ComputationDetail'
-import PlotComponent from '../plot/PlotComponent'
 import * as moment from 'moment'
 import 'moment-precise-range-plugin'
+import ComputationDetail from './ComputationDetail'
+import PlotComponent from '../plot/PlotComponent'
 
+import algorithms from '../smpc-global/algorithms.json'
 import actions from '../actions'
 import { findComputationIndexById } from '../helpers'
 
@@ -127,19 +128,21 @@ class SingleComputation extends React.Component {
   }
 
   formatTimestamps (timestamps) {
-    if (!timestamps) {
-      return { start: '', end: '', diff: '' }
-    }
-
     const start = timestamps.accepted ? moment(timestamps.accepted).format('dddd, MMMM Do YYYY, HH:mm:ss') : ''
     const end = timestamps.done ? moment(timestamps.done).format('dddd, MMMM Do YYYY, HH:mm:ss'): ''
     const diff = moment(timestamps.accepted).preciseDiff(timestamps.done)
     return { start, end, diff}
   }
 
+  getAlgorithName (algorithm) {
+   let alg = algorithms.find(a => a.name === algorithm)
+   return alg && alg.title ? alg.title : null
+  }
+
   formatComputation () {
     const attributes = this.state.computation.attributes.map(item => item.name).join(', ')
-    return { ...this.state.computation, attributes, time: this.formatTimestamps(this.state.computation.timestamps)}
+    const algorithm = this.getAlgorithName(this.state.computation.algorithm)
+    return { ...this.state.computation, attributes, algorithm, time: this.formatTimestamps(this.state.computation.timestamps)}
   }
 
   render () {
