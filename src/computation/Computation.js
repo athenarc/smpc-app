@@ -33,7 +33,7 @@ class Computation extends React.Component {
         <div className='jumbotron'>
           <div className='container'>
             <h1 className='display-4'>Computation</h1>
-            <p className='lead'>Check the status of your computation</p>
+            <p className='lead'>Check computation status</p>
             <hr className='my-4' />
             <p>
                All computations
