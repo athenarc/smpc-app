@@ -1,5 +1,5 @@
 import {
-  requestHistCategorical,
+  requestHistogram,
   checkComputationStatus,
   getSingleComputation,
   deleteComputation,
@@ -17,7 +17,7 @@ import {
 } from './websocket'
 
 export default {
-  requestHistCategorical,
+  requestHistogram,
   checkComputationStatus,
   addComputation,
   deleteComputation,

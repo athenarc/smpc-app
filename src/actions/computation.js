@@ -1,7 +1,7 @@
 import types from './actionTypes'
 import { createSimpleAction, createAPIAction } from '../helpers'
 
-const requestHistCategorical = createAPIAction({
+const requestHistogram = createAPIAction({
   url: '/smpc/histogram',
   action: 'post',
   beforeAction: createSimpleAction(types.SUBMIT_COMPUTATION),
@@ -24,7 +24,7 @@ const addComputation = createSimpleAction(types.ADD_COMPUTATION)
 const deleteComputation = createSimpleAction(types.DELETE_COMPUTATION)
 
 export {
-  requestHistCategorical,
+  requestHistogram,
   checkComputationStatus,
   getSingleComputation,
   addComputation,
