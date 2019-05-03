@@ -1,4 +1,6 @@
+import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000'
 
@@ -46,10 +48,44 @@ const findComputationIndexById = (arr, id) => {
   return arr.findIndex((item) => item.id === id)
 }
 
+const wrapWithLink = ({ to, context, classes }) => {
+  return (
+    <Link className={classes} to={to}><b>{context}</b></Link>
+  )
+}
+
+const wrapComputationIDWithLink = id => {
+  return wrapWithLink({ to: `/computation/${id}`, context: id, classes: 'notification-link' })
+}
+
+const getNotificationMessage = job => {
+  let msg = {}
+  console.log(job.status)
+
+  switch (job.status) {
+    case 'completed':
+      msg = { msg: (<span>Computation with ID {wrapComputationIDWithLink(job.id)} completed.</span>), type: 'success', title: 'Success' }
+      break;
+    case 'pending':
+      msg = { msg: (<span>Computation with ID {wrapComputationIDWithLink(job.id)} was added to queue.</span>), type: 'info', title: 'Information' }
+      break;
+    case 'failed':
+      msg = { msg: (<span>Computation with ID {wrapComputationIDWithLink(job.id)} failed.</span>), type: 'error', title: 'Error' }
+      break;
+    case 'processing':
+      msg = { msg: (<span>Computation with ID {wrapComputationIDWithLink(job.id)} is being processed.</span>), type: 'info', title: 'Information' }
+      break;
+    default:
+  }
+
+  return msg
+}
+
 export {
   createReducer,
   buildActionTypes,
   createSimpleAction,
   createAPIAction,
-  findComputationIndexById
+  findComputationIndexById,
+  getNotificationMessage
 }

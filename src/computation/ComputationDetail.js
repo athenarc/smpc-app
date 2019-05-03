@@ -18,8 +18,6 @@ const ComputationDetail = ({ id, status, algorithm, time, attributes, filters })
     </tr>
   )
 
-  console.log('mesa', filtersHTML)
-
   return (
     <div className='container'>
       <article className='my-3 p-3 bg-white rounded shadow-sm'>
@@ -37,7 +35,7 @@ const ComputationDetail = ({ id, status, algorithm, time, attributes, filters })
         <h6 className='pb-2 mb-0'>{attributes}</h6>
       </article>
       {
-        filters && filters.length > 0 && 
+        filters && filters.length > 0 &&
         <article className='my-3 p-3 bg-white rounded shadow-sm'>
           <h3 className='pb-2 mb-0'>Filters</h3>
           <div className='table-responsive'>

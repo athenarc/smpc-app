@@ -1,4 +1,5 @@
 import types from './actionTypes'
+import { getNotificationMessage } from '../helpers'
 
 const URI = process.env.REACT_APP_WS || 'ws://localhost:3000'
 const webSocket = new WebSocket(URI);
@@ -24,23 +25,7 @@ const initWebsocket = (store) => {
       }
 
       store.dispatch({ type: types.UPDATE_COMPUTATION, payload: { data: data.job } })
-      let msg = {}
-
-      switch (data.job.status) {
-        case 'completed':
-          msg = { msg: `Computation with ID ${data.job.id} completed`, type: 'success', title: 'Success' }
-          break;
-        case 'failed':
-          msg = { msg: `Computation with ID ${data.job.id} failed`, type: 'error', title: 'Error' }
-          break;
-        case 'processing':
-          msg = { msg: `Computation with ID ${data.job.id} is being processed`, type: 'info', title: 'Information' }
-          break;
-        default:
-
-      }
-
-      store.dispatch({ type: types.ADD_NOTIFICATION, payload: { data: msg } })
+      store.dispatch({ type: types.ADD_NOTIFICATION, payload: { data: getNotificationMessage(data.job) } })
     }
 
     webSocket.onopen = () => {
