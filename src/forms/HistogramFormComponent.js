@@ -7,7 +7,7 @@ import FiltersFormGroup from './FiltersFormGroup'
 import AttributesFormGroup from './AttributesFormGroup'
 import withRepeatableRow from './RepeatableRow'
 
-import attributes from '../attributes.json'
+import attributes from '../smpc-global/attributes.json'
 
 const AttributeRepeatableRow = withRepeatableRow(AttributesFormGroup, 'attributes')
 const FilterRepeatableRow = withRepeatableRow(FiltersFormGroup, 'filters')
@@ -28,10 +28,10 @@ const HistogramFormComponent = ({ onSubmit }) => {
     }) => (
       <form onSubmit={handleSubmit}>
         <h4 className='mb-3'>Attributes</h4>
-        <AttributeRepeatableRow push={push} attributes={attributes} />
+        <AttributeRepeatableRow push={push} attributes={attributes.map(attr => attr.name)} />
         <hr className='mb-4' />
         <h4 className='mb-3'>Filters</h4>
-        <FilterRepeatableRow push={push} attributes={attributes} />
+        <FilterRepeatableRow push={push} attributes={attributes.map(attr => attr.name)} />
         <hr className='mb-4' />
         <h4 className='mb-3'>Datasources</h4>
         <hr className='mb-4' />
