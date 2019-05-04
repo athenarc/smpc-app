@@ -32,11 +32,16 @@ class Computation extends React.Component {
       <section className='home'>
         <div className='jumbotron'>
           <div className='container'>
-            <h1 className='display-4'>Computation</h1>
-            <p className='lead'>Check computation status</p>
+            <h1 className='display-4'>Computations</h1>
+            <p className='lead'>A list of personal comoputation requests</p>
             <hr className='my-4' />
             <p>
-               All computations
+              All information regarding your computation requests. This includes recent
+              computations and their status: pending, completed, failed. A pending status
+              indicates that your requested computation is still being processed. A completed
+              status indicates that your computation was executed successfully and your
+              results are available. Finally, a failed status indicates that something went
+              wrong with your computation and it was terminated before completion.
             </p>
           </div>
         </div>
