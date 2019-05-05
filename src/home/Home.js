@@ -20,12 +20,11 @@ const Home = ({ ...props }) => {
           <div className='col-sm-12'>
             <div className='card'>
               <div className='card-body'>
-                <h5 className='card-title'>Secure data aggregation</h5>
+                <h5 className='card-title'>Secure histogram computation</h5>
                 <p className='card-text'>
-                  Perform analytics using privacy-preserving data aggregation algorithms for
-computing and visualizing multi-dimemsional histograms.
+                  Request a secure histogram computation
                 </p>
-                <Link to='/histogram' className='btn btn-primary'>Request a secure histogram computation</Link>
+                <Link to='/histogram' className='btn btn-primary'>Request computation</Link>
               </div>
             </div>
           </div>
