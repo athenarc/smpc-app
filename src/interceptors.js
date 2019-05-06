@@ -33,6 +33,10 @@ const setupInterceptors = (store) => {
       store.dispatch(addNotification({ msg: '400! Bad Request', type: 'error', title: 'Error' }))
     }
 
+    if (error.response.status === 401) {
+      store.dispatch(addNotification({ msg: '401! Unauthorized action', type: 'error', title: 'Error' }))
+    }
+
     if (error.response.status === 404) {
       store.dispatch(addNotification({ msg: '404! The page you are looking for cannot be found', type: 'error', title: 'Error' }))
     }
