@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field } from 'react-final-form'
 
-const AttributesFormGroup = ({ input, algorithms, listener }) => {
+const AttributesFormGroup = ({ algorithms, listener }) => {
   return (
     <div className='form-row filters'>
       <div className='form-group col-md-12'>

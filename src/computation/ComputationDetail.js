@@ -5,7 +5,6 @@ const ComputationDetail = ({ id, status, algorithm, time, attributes, filters })
   const statusClass = className({
     'text-success': status === 'completed',
     'text-info': status === 'processing',
-    'text-info': status === 'pending',
     'text-danger': status === 'failed'
   })
 
