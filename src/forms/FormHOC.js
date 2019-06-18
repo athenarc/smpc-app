@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom'
 import { getNotificationMessage } from '../helpers'
 
 import actions from '../actions'
@@ -22,7 +21,7 @@ export default function withForm (FormComponent, options = {}) {
     render () {
       return (
         <div className='my-3 p-3 bg-white rounded shadow-sm'>
-          <FormComponent onSubmit={this.onSubmit} />
+          <FormComponent onSubmit={this.onSubmit} {...this.props} />
         </div>
       )
     }
