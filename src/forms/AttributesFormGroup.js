@@ -9,8 +9,8 @@ const AttributesFormGroup = ({ name, attributes }) => {
         <Field id={`${name}.name`} name={`${name}.name`} component='select' className='custom-select'>
           <option />
           {
-            attributes.map(attr =>
-              <option value={attr} key={attr}>{attr}</option>
+            attributes.map((attr, index) =>
+              <option value={attr.id} key={`${index}-${attr.id}`}>{attr.name}</option>
             )
           }
         </Field>
