@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Form } from 'react-final-form'
+import { Form, FormSpy } from 'react-final-form'
 import arrayMutators from 'final-form-arrays'
 
 import Algorithms from './Algorithms'
@@ -29,6 +29,8 @@ class HistogramForm extends React.Component {
       attributes: keywords,
       algorithms: algorithms.filter(alg => alg.name.includes('histogram'))
     }
+
+    this.onFormChange = this.onFormChange.bind(this)
   }
 
   onAlgorithmChange (event) {
@@ -57,6 +59,10 @@ class HistogramForm extends React.Component {
     }
   }
 
+  onFormChange ({ values }) {
+    console.log(values)
+  }
+
   render () {
     return (
       <Form
@@ -72,7 +78,6 @@ class HistogramForm extends React.Component {
         submitting,
         values
       }) => (
-        <form onSubmit={handleSubmit}>
           <h4 className='mb-3'>Algorithm</h4>
           <Algorithms algorithms={algorithms} listener={this.listeners.algorithm} />
           <h4 className='mb-3'>Attributes</h4>
@@ -86,7 +91,11 @@ class HistogramForm extends React.Component {
           <DataSourceFormGroup />
           <hr className='mb-4' />
           <button className='btn btn-primary btn-lg btn-block' type='submit' disabled={submitting}>Request computation</button>
-        </form>
+        <div>
+          <FormSpy subscription={{ values: true }} onChange={this.onFormChange} />
+          <form onSubmit={handleSubmit}>
+          </form>
+        </div>
         )}
       />)
   }
