@@ -30,6 +30,7 @@ class HistogramForm extends React.Component {
       default: {
         algorithm: '1d_categorical_histogram'
       },
+      showCells: false,
       algorithms: algorithms.filter(alg => alg.name.includes('histogram'))
     }
 
@@ -43,18 +44,21 @@ class HistogramForm extends React.Component {
       case '1d_categorical_histogram':
       case '2d_categorical_histogram':
         this.setState({
-          attributes: keywords
+          attributes: keywords,
+          showCells: false
         })
         break
       case '1d_numerical_histogram':
       case '2d_numerical_histogram':
         this.setState({
           attributes: meshAttributes.filter(a => a.type === 'numerical'),
+          showCells: true
         })
         break
       case '2d_mixed_histogram':
         this.setState({
-          attributes: [ ...meshAttributes, ...keywords ]
+          attributes: [ ...meshAttributes, ...keywords ],
+          showCells: true
         })
         break
       default:
@@ -82,22 +86,22 @@ class HistogramForm extends React.Component {
         submitting,
         values
       }) => (
-          <h4 className='mb-3'>Algorithm</h4>
-          <Algorithms algorithms={algorithms} listener={this.listeners.algorithm} />
-          <h4 className='mb-3'>Attributes</h4>
-          <AttributeRepeatableRow push={push} attributes={this.state.attributes} />
-          <hr className='mb-4' />
-          <h4 className='mb-3'>Filters</h4>
-          <FilterRepeatableRow push={push} attributes={this.state.attributes} />
-          <hr className='mb-4' />
-          <h4 className='mb-3'>Datasources</h4>
-          <hr className='mb-4' />
-          <DataSourceFormGroup />
-          <hr className='mb-4' />
-          <button className='btn btn-primary btn-lg btn-block' type='submit' disabled={submitting}>Request computation</button>
         <div>
           <FormSpy subscription={{ values: true }} onChange={this.onFormChange} />
           <form onSubmit={handleSubmit}>
+            <h4 className='mb-3'>Algorithm</h4>
+            <Algorithms algorithms={this.state.algorithms} listener={this.listeners.algorithm} />
+            <h4 className='mb-3'>Attributes</h4>
+            <AttributeRepeatableRow push={push} attributes={this.state.attributes} showCells={this.state.showCells} />
+            <hr className='mb-4' />
+            <h4 className='mb-3'>Filters</h4>
+            <FilterRepeatableRow push={push} attributes={this.state.attributes} />
+            <hr className='mb-4' />
+            <h4 className='mb-3'>Datasources</h4>
+            <hr className='mb-4' />
+            <DataSourceFormGroup />
+            <hr className='mb-4' />
+            <button className='btn btn-primary btn-lg btn-block' type='submit' disabled={submitting}>Request computation</button>
           </form>
         </div>
         )}
