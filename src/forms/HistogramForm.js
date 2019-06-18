@@ -46,7 +46,7 @@ class HistogramForm extends React.Component {
       case '1d_numerical_histogram':
       case '2d_numerical_histogram':
         this.setState({
-          attributes: meshAttributes
+          attributes: meshAttributes.filter(a => a.type === 'numerical'),
         })
         break
       case '2d_mixed_histogram':
