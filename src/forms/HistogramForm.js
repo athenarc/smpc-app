@@ -27,6 +27,9 @@ class HistogramForm extends React.Component {
 
     this.state = {
       attributes: keywords,
+      default: {
+        algorithm: '1d_categorical_histogram'
+      },
       algorithms: algorithms.filter(alg => alg.name.includes('histogram'))
     }
 
@@ -67,6 +70,7 @@ class HistogramForm extends React.Component {
     return (
       <Form
         onSubmit={this.props.onSubmit}
+        initialValues={this.state.default}
         mutators={{
           ...arrayMutators
         }}
