@@ -13,6 +13,7 @@
   bottom: 15px;
   right: 15px;
   z-index: 1000;
+  min-width: 180px;
 }
 
 .actions {
@@ -22,5 +23,13 @@
 
   > :first-child {
     margin-left: 0;
+  }
+}
+
+.dots {
+  &:after {
+    content: '\2807';
+    font-size: 25px;
+    line-height: 1;
   }
 }
