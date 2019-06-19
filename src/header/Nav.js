@@ -16,7 +16,7 @@ const Nav = ({ ...props }) => {
             <NavLink className='nav-link' to='/histogram' activeClassName='active'>Data aggregation</NavLink>
           </li>
           <li className='nav-item'>
-            <NavLink className='nav-link' to='/computation' activeClassName='active'>Computations</NavLink>
+            <NavLink className='nav-link' to='/dashboard' activeClassName='active'>Computations</NavLink>
           </li>
         </ul>
       </div>
