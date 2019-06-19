@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 
 import { Form, FormSpy } from 'react-final-form'
 import arrayMutators from 'final-form-arrays'
@@ -25,13 +26,16 @@ class HistogramForm extends React.Component {
       algorithm: this.onAlgorithmChange.bind(this)
     }
 
+    this.keywords = _.sortBy(keywords, 'name')
+    this.meshAttributes = _.sortBy(meshAttributes, 'name')
+
     this.state = {
-      attributes: keywords,
+      attributes: this.keywords,
       default: {
         algorithm: '1d_categorical_histogram'
       },
       showCells: false,
-      algorithms: algorithms.filter(alg => alg.name.includes('histogram'))
+      algorithms: _.sortBy(algorithms.filter(alg => alg.name.includes('histogram')), 'title')
     }
 
     this.onFormChange = this.onFormChange.bind(this)
@@ -44,20 +48,20 @@ class HistogramForm extends React.Component {
       case '1d_categorical_histogram':
       case '2d_categorical_histogram':
         this.setState({
-          attributes: keywords,
+          attributes: this.keywords,
           showCells: false
         })
         break
       case '1d_numerical_histogram':
       case '2d_numerical_histogram':
         this.setState({
-          attributes: meshAttributes.filter(a => a.type === 'numerical'),
+          attributes: this.meshAttributes.filter(a => a.type === 'numerical'),
           showCells: true
         })
         break
       case '2d_mixed_histogram':
         this.setState({
-          attributes: [ ...meshAttributes, ...keywords ],
+          attributes: [ ...this.meshAttributes, ...this.keywords ],
           showCells: true
         })
         break
