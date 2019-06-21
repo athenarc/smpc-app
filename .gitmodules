@@ -1,3 +1,3 @@
-[submodule "src/smpc-global"]
+[submodule "smpc-global"]
 	path = src/smpc-global
-	url = https://github.com/Athena-MHMD/smpc-global.git
+	url = https://github.com/athenarc/smpc-global.git

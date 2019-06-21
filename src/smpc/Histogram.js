@@ -11,13 +11,12 @@ class Histogram extends React.Component {
             <p className='lead'>Perform analytics using privacy-preserving data aggregation algorithms for computing and visualizing multi-dimemsional histograms.</p>
             <hr className='my-4' />
             <p>
-            CVI Dataset: Cardiovascular disease is a class of diseases that
-            involve the heart or blood vessels. Cardiovascular disease includes
-            coronary artery diseases (CAD) such as angina and myocardial
-            infarction (commonly known as a heart attack). This dataset contains
-            CardioVascular Imaging (CVI) information, which are represented as
-            numerical values – not normalized.
+              Medical Subject Headings (MeSH) provides a hierarchically-organized terminology for indexing and cataloguing biomedical information such as MEDLINE/PUBmed and other databases from the US National Library of Medicine (NLM). Created and updated by the NLM, MeSH is used in articles, databases and the NLM's catalog of book holdings. MeSH terms are represented as normalized values. That is, even numerical attributes such as "Age", are separated into groups (for instance Child, Adult, etc).
             </p>
+            <p>
+              This dataset contains semantically annotated patient data based on the MeSH tree structure. In order to request an aggregation, the attributes must be specified and should be in the form that is defined by MeSH. For instance, for the attribute "Age", one would need to provide the MeSH ID M01.060, which has the following subcategories: Adolescent [M01.060.057], Adult [M01.060.116], Child [M01.060.406] and Infant [M01.060.703].
+              </p>
+              <p>Search mesh terms at: <a href='https://meshb.nlm.nih.gov/treeView' role='button' target='_blank' rel='noopener noreferrer'>MeSH Browser Tree View</a></p>
           </div>
         </div>
         <div className='container'>

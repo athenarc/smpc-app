@@ -22,7 +22,7 @@ class SingleComputation extends React.Component {
       paper_bgcolor: '#f8f9fa',
       plot_bgcolor: '#f8f9fa',
       xaxis: {
-        type: 'category',
+        type: 'category'
       }
     }
 
@@ -49,7 +49,7 @@ class SingleComputation extends React.Component {
         trace.type = 'bar'
         trace.y = results.y
         trace.x = results.x
-        break;
+        break
       case '1d_numerical_histogram':
         trace.type = 'bar'
         trace.y = results.y
@@ -58,16 +58,16 @@ class SingleComputation extends React.Component {
         layout.xaxis = {
           tickvals: [...Array(results.cells).keys()],
           ticktext: this.computeAxisLabels(results.min, results.max, width, results.cells),
-          title: this.state.computation.attributes[0].name,
+          title: this.state.computation.attributes[0].name
         }
 
-        break;
+        break
       case '2d_categorical_histogram':
         trace.type = 'heatmap'
         trace.z = results.z
         trace.x = results.labels.x
         trace.y = results.labels.y
-        break;
+        break
       case '2d_numerical_histogram':
         let width0 = (results.max[0] - results.min[0]) / results.cellsX
         let width1 = (results.max[1] - results.min[1]) / results.cellsY
@@ -76,16 +76,15 @@ class SingleComputation extends React.Component {
         trace.z = results.z
         trace.y = this.computeAxisLabels(results.min[0], results.max[0], width0, results.cellsX)
         trace.x = this.computeAxisLabels(results.min[1], results.max[1], width1, results.cellsY)
-        break;
+        break
       case '2d_mixed_histogram':
         width = (results.max - results.min) / results.cells
         trace.type = 'heatmap'
         trace.z = results.z
         trace.x = this.computeAxisLabels(results.min, results.max, width, results.cells)
         trace.y = results.y
-        break;
+        break
       default:
-
     }
 
     this.setState({ plot: { data: [trace], layout } })
@@ -105,17 +104,15 @@ class SingleComputation extends React.Component {
     return ticks
   }
 
-
-  updatePlot(figure) {
-   this.setState({ plot: figure })
+  updatePlot (figure) {
+    this.setState({ plot: figure })
   }
 
   componentDidMount () {
-    this.props.actions.getSingleComputation({ id: this.props.match.params.id }).then(res =>
-      {
-        this.setState( { computation: this.findComputation(this.props.match.params.id) } )
-        this.makePlot()
-      }
+    this.props.actions.getSingleComputation({ id: this.props.match.params.id }).then(res => {
+      this.setState({ computation: this.findComputation(this.props.match.params.id) })
+      this.makePlot()
+    }
     )
   }
 
@@ -129,20 +126,20 @@ class SingleComputation extends React.Component {
 
   formatTimestamps (timestamps) {
     const start = timestamps.accepted ? moment(timestamps.accepted).format('dddd, MMMM Do YYYY, HH:mm:ss') : ''
-    const end = timestamps.done ? moment(timestamps.done).format('dddd, MMMM Do YYYY, HH:mm:ss'): ''
+    const end = timestamps.done ? moment(timestamps.done).format('dddd, MMMM Do YYYY, HH:mm:ss') : ''
     const diff = moment(timestamps.accepted).preciseDiff(timestamps.done)
-    return { start, end, diff}
+    return { start, end, diff }
   }
 
   getAlgorithName (algorithm) {
-   let alg = algorithms.find(a => a.name === algorithm)
-   return alg && alg.title ? alg.title : null
+    let alg = algorithms.find(a => a.name === algorithm)
+    return alg && alg.title ? alg.title : null
   }
 
   formatComputation () {
     const attributes = this.state.computation.attributes.map(item => item.name).join(', ')
     const algorithm = this.getAlgorithName(this.state.computation.algorithm)
-    return { ...this.state.computation, attributes, algorithm, time: this.formatTimestamps(this.state.computation.timestamps)}
+    return { ...this.state.computation, attributes, algorithm, time: this.formatTimestamps(this.state.computation.timestamps) }
   }
 
   render () {
@@ -155,7 +152,7 @@ class SingleComputation extends React.Component {
         {
           (this.state.computation.status && this.state.computation.status === 'completed') &&
             <div className='plot'>
-              <PlotComponent { ...this.state.plot } onInitialized={this.updatePlot} onUpdate={this.updatePlot} />
+              <PlotComponent {...this.state.plot} onInitialized={this.updatePlot} onUpdate={this.updatePlot} />
             </div>
         }
         <ComputationDetail {...this.formatComputation()} />
