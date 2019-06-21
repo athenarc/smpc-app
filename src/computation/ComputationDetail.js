@@ -1,5 +1,6 @@
 import React from 'react'
 import className from 'classnames'
+import _ from 'lodash'
 
 const ComputationDetail = ({ id, status, algorithm, time, attributes, filters }) => {
   const statusClass = className({
@@ -8,7 +9,7 @@ const ComputationDetail = ({ id, status, algorithm, time, attributes, filters })
     'text-danger': status === 'failed'
   })
 
-  const filtersHTML = filters.map((f, key) =>
+  const filtersHTML = !_.isArray(filters) ? null : filters.map((f, key) =>
     f &&
     <tr key={key}>
       <td>{f.attribute}</td>
