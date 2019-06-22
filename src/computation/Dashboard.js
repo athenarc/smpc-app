@@ -33,7 +33,7 @@ class Dashboard extends React.Component {
   }
 
   getRecentComputations () {
-    return _.orderBy(this.props.computations.slice(0, this.state.numberOfRecentComputations), ['id'], ['asc'])
+    return _.orderBy(this.props.computations, [(c) => c.timestamps.accepted], ['desc']).slice(0, this.state.numberOfRecentComputations)
   }
 
   render () {
