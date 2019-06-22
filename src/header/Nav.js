@@ -13,10 +13,13 @@ const Nav = ({ ...props }) => {
       <div className='collapse navbar-collapse' id='navbarNav'>
         <ul className='navbar-nav'>
           <li className='nav-item'>
-            <NavLink className='nav-link' to='/histogram' activeClassName='active'>Secure Histograms</NavLink>
+            <NavLink className='nav-link' to='/dashboard' activeClassName='active'>Dashboard</NavLink>
           </li>
           <li className='nav-item'>
-            <NavLink className='nav-link' to='/dashboard' activeClassName='active'>Computations</NavLink>
+            <NavLink className='nav-link' to='/computations' activeClassName='active'>Computations</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink className='nav-link' to='/histogram' activeClassName='active'>Secure Histograms</NavLink>
           </li>
         </ul>
       </div>
