@@ -41,8 +41,8 @@ class Dashboard extends React.Component {
       <section className='home'>
         <div className='jumbotron'>
           <div className='container'>
-            <h1 className='display-4'>Computations</h1>
-            <p className='lead'>A list of personal comoputation requests</p>
+            <h1 className='display-4'>Dashboard</h1>
+            <p className='lead'>See and manage your computations</p>
             <hr className='my-4' />
             <p>
               All information regarding your computation requests. This includes recent
