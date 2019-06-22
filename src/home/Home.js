@@ -12,7 +12,6 @@ const Home = ({ ...props }) => {
           <p>
             A platform for secure aggregation of private patient data based on SPDZ.  The implemented importation mechanism enables data providers to secret share their dataset between the remote nodes comprising the SMPC cluster without compromising privacy and security; Patient data never leave a hospital unencrypted and are only retrievable by cooperation of all SMPC nodes. Our backend is powered by open-source software "SCALE-MAMBA" which is a sophisticated tool for SMPC. The supported algorithms include numerical and categorical histograms as well as secure aggregation.
           </p>
-          <a className='btn btn-primary btn-lg' href='#' role='button'>Learn more</a>
         </div>
       </div>
       <div className='container'>
