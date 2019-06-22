@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
     super()
     this.onSubmit = this.onSubmit.bind(this)
     this.state = {
-      numberOfRecentComputations: 5
+      numberOfRecentComputations: 10
     }
   }
 
