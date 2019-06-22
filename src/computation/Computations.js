@@ -26,8 +26,6 @@ class Computations extends React.Component {
   }
 
   deleteComputation (id) {
-    console.log('mesa')
-    console.log(id)
     this.props.actions.deleteComputation({ id })
   }
 
