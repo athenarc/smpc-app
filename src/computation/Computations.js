@@ -45,7 +45,7 @@ class Computations extends React.Component {
     return timestamps && timestamps.accepted ? moment(timestamps.accepted).format('DD/MM/YYYY') : ''
   }
 
-  getStatus (status) {
+  getStatusBadge (status) {
     switch (status) {
       case 'completed':
         return <span className='badge badge-success'>Successed</span>
@@ -86,7 +86,7 @@ class Computations extends React.Component {
                       <p class='card-text'><small className='text-muted'>Accepted at: {this.getAcceptedTime(c.timestamps)}</small></p>
                     </div>
                     <div className='card-body status'>
-                      {this.getStatus(c.status)}
+                      {this.getStatusBadge(c.status)}
                     </div>
                   </Link>
                 </div>
