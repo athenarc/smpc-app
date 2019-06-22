@@ -70,18 +70,19 @@ class Computations extends React.Component {
             {
               this.props.computations.map((c, index) => (
                 <div className='card computation' key={index}>
-                  <Link to={`/computation/${c.id}`}>
                     <div className='computation-menu' id='computation-menu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                       <div className='dots text-muted' />
-                      <div className='dropdown-menu dropdown-menu-right' aria-labelledby='computation-menu'>
-                        <button className='dropdown-item' onClick={() => console.log('button', c.id)}>Delete</button>
+                      <div className='dropdown-menu dropdown-menu-right' aria-labelledby='computation-menu' onClick={() => {console.log('yo')}}>
+                        <button type='button' className='dropdown-item' onClick={(e) => { console.log('mesa'); this.checkStatus(c.id)}}>Check status</button>
+                        <button type='button' className='dropdown-item' onClick={(e) => this.deleteComputation(c.id)}>Delete</button>
                       </div>
                     </div>
+                  <Link to={`/computation/${c.id}`}>
                     <div className='card-body'>
                       <h5 className='card-title'>{this.getAlgorithm(c.algorithm)}</h5>
-                      <p class='card-text id'>ID: {c.id}</p>
-                      <p class='card-text attributes'>Attributes: {this.getAttributes(c.attributes)}</p>
-                      <p class='card-text'><small className='text-muted'>Accepted at: {this.getAcceptedTime(c.timestamps)}</small></p>
+                      <p className='card-text id'>ID: {c.id}</p>
+                      <p className='card-text attributes'>Attributes: {this.getAttributes(c.attributes)}</p>
+                      <p className='card-text'><small className='text-muted'>Accepted at: {this.getAcceptedTime(c.timestamps)}</small></p>
                     </div>
                     <div className='card-body status'>
                       {this.getStatusBadge(c.status)}
