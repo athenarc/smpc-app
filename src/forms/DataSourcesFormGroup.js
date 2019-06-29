@@ -5,16 +5,16 @@ const DataSourceFormGroup = () => {
   return (
     <div className='form-group form-check form-check-inline datasources'>
       <div className='custom-control custom-switch datasource'>
-        <Field type='checkbox' value='data-provider-1' name='data-providers' id='data-provider-1' component='input' className='custom-control-input' />
-        <label className='custom-control-label' htmlFor='data-provider-1'>Hospital A</label>
+        <Field type='checkbox' value='1' name='dataProviders' id='1' component='input' className='custom-control-input' />
+        <label className='custom-control-label' htmlFor='1'>Hospital A</label>
       </div>
       <div className='custom-control custom-switch datasource'>
-        <Field type='checkbox' value='data-provider-2' name='data-providers' id='data-provider-2' component='input' className='custom-control-input' />
-        <label className='custom-control-label' htmlFor='data-provider-2'>Hospital B</label>
+        <Field type='checkbox' value='2' name='dataProviders' id='2' component='input' className='custom-control-input' />
+        <label className='custom-control-label' htmlFor='2'>Hospital B</label>
       </div>
       <div className='custom-control custom-switch datasource'>
-        <Field type='checkbox' value='data-provider-3' name='data-providers' id='data-provider-3' component='input' className='custom-control-input' />
-        <label className='custom-control-label' htmlFor='data-provider-3'>Hospital C</label>
+        <Field type='checkbox' value='3' name='dataProviders' id='3' component='input' className='custom-control-input' />
+        <label className='custom-control-label' htmlFor='3'>Hospital C</label>
       </div>
     </div>
   )
