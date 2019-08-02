@@ -13,7 +13,7 @@ class Login extends React.Component {
   }
 
   onSubmit (values) {
-    this.props.actions.login({ username: values.username, password: values.password })
+    this.props.actions.login({}, { username: values.username, token: values.token})
   }
 
   render () {
