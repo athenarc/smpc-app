@@ -11,12 +11,12 @@ const LoginView = ({ onSubmit }) => {
         }) => (
           <form onSubmit={handleSubmit}>
             <div className='form-group'>
-              <label for='username'>Username</label>
+              <label htmlFor='username'>Username</label>
               <Field id='username' name='username' component='input' className='form-control' type='text' placeholder='Enter username' />
             </div>
             <div className='form-group'>
-              <label for='password'>Password</label>
-              <Field id='password' name='password' component='input' className='form-control' type='password' placeholder='Password' />
+              <label htmlFor='token'>Token</label>
+              <Field id='token' name='token' component='input' className='form-control' type='token' placeholder='Password' />
             </div>
             <button type='submit' className='btn btn-primary' disabled={submitting}>Submit</button>
           </form>
