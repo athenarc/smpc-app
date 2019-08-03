@@ -3,6 +3,7 @@ import axios from 'axios'
 import actions from './actions'
 
 const addNotification = actions.addNotification
+const unauthorized = actions.unauthorized
 
 const setupInterceptors = (store) => {
   const requestThen = (config) => {
@@ -34,6 +35,7 @@ const setupInterceptors = (store) => {
     }
 
     if (error.response.status === 401) {
+      store.dispatch(unauthorized())
       store.dispatch(addNotification({ msg: '401! Unauthorized action', type: 'error', title: 'Error' }))
     }
 
