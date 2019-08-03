@@ -16,7 +16,7 @@ const LoginView = ({ onSubmit }) => {
             </div>
             <div className='form-group'>
               <label htmlFor='token'>Token</label>
-              <Field id='token' name='token' component='input' className='form-control' type='token' placeholder='Password' />
+              <Field id='token' name='token' component='input' className='form-control' type='password' placeholder='Token' />
             </div>
             <button type='submit' className='btn btn-primary' disabled={submitting}>Submit</button>
           </form>
