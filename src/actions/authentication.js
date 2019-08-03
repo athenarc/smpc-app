@@ -8,6 +8,16 @@ const login = createAPIAction({
   afterAction: createSimpleAction(types.LOGIN_SUCCESS)
 })
 
+const logout = () => {
+  return { type: types.LOGOUT, payload: {} }
+}
+
+const unauthorized = () => {
+  return { type: types.UNAUTHORIZED, payload: {} }
+}
+
 export {
-  login
+  login,
+  logout,
+  unauthorized
 }

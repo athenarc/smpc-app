@@ -17,7 +17,9 @@ import {
 } from './websocket'
 
 import {
-  login
+  login,
+  logout,
+  unauthorized
 } from './authentication'
 
 export default {
@@ -30,5 +32,7 @@ export default {
   getSingleComputation,
   initWebsocket,
   emit,
-  login
+  login,
+  logout,
+  unauthorized
 }
