@@ -33,3 +33,26 @@
     line-height: 1;
   }
 }
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  font-size: 1.25rem;
+  align-items: center;
+  flex-shrink: 0;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 50%;
+  justify-content: center;
+  background-color: #e9ecef;
+}
+
+.caret-off::before {
+    display: none !important;
+}
+.caret-off::after {
+    display: none !important;
+}
