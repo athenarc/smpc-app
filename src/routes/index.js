@@ -6,12 +6,12 @@ import SingleComputation from '../computation/SingleComputation'
 import Login from '../authentication/Login'
 
 const appRoutes = [
-  { path: '/', component: Home },
-  { path: '/histogram', component: Histogram },
-  { path: '/dashboard', component: Dashboard },
-  { path: '/computations', component: Computations },
-  { path: '/computation/:id', component: SingleComputation },
-  { path: '/login', component: Login }
+  { path: '/', component: Home, private: false },
+  { path: '/histogram', component: Histogram, private: true },
+  { path: '/dashboard', component: Dashboard, private: true },
+  { path: '/computations', component: Computations, private: true },
+  { path: '/computation/:id', component: SingleComputation, private: true },
+  { path: '/login', component: Login, private: false }
 ]
 
 export default appRoutes
