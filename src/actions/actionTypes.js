@@ -14,7 +14,8 @@ const types = [
   'GET_SINGLE_COMPUTATION_SUCCESS',
   'LOGIN',
   'LOGIN_SUCCESS',
-  'LOGOUT'
+  'LOGOUT',
+  'UNAUTHORIZED'
 ]
 
 const objTypes = buildActionTypes(types)
