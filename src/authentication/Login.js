@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter } from "react-router"
 
 import LoginView from './LoginView'
 import actions from '../actions'
@@ -13,7 +14,10 @@ class Login extends React.Component {
   }
 
   onSubmit (values) {
-    this.props.actions.login({}, { username: values.username, token: values.token})
+    this.props.actions.login({}, { username: values.username, token: values.token })
+      .then((value) => {
+        this.props.history.push('/')
+      })
   }
 
   render () {
@@ -39,4 +43,4 @@ class Login extends React.Component {
 
 const mapDispatchToProps = dispatch => ({actions: bindActionCreators({ login }, dispatch)})
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(null, mapDispatchToProps)(withRouter(Login))
