@@ -3,6 +3,8 @@ import { NavLink, Link } from 'react-router-dom'
 
 import logo from '../assets/images/mhmd_logo_color.svg'
 
+import Avatar from './Avatar'
+
 const Nav = ({ ...props }) => {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
@@ -22,6 +24,7 @@ const Nav = ({ ...props }) => {
             <NavLink className='nav-link' to='/histogram' activeClassName='active'>Secure Histograms</NavLink>
           </li>
         </ul>
+        <Avatar />
       </div>
     </nav>
   )

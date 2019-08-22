@@ -29,14 +29,22 @@ const createSimpleAction = (type) => {
 
 const createAPIAction = ({ url, action = 'get', beforeAction, afterAction }) => {
   return (routeParameters = {}, requestData = {}) => {
-    return async dispatch => {
+    return async (dispatch, getState) => {
       dispatch(beforeAction())
 
+      const user = getState().user
+      let config = { method: action, data: requestData }
       let normalizedURL = `${BASE_URL}${url}`
 
       normalizedURL = Object.keys(routeParameters).reduce((prev, cur) => prev.replace(`:${cur}`, routeParameters[cur]), normalizedURL)
 
-      const res = await axios[action](normalizedURL, requestData)
+      config['url'] = normalizedURL
+
+      if (user && user.jwt_token) {
+        config['headers'] = { Authorization: `Bearer ${user.jwt_token}` }
+      }
+
+      const res = await axios.request(config)
 
       dispatch(afterAction(res.data))
       return res.data

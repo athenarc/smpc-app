@@ -23,7 +23,8 @@ actions.initWebsocket(store)
 
 store.subscribe(throttle(() => {
   saveState({
-    computations: store.getState().computations
+    computations: store.getState().computations,
+    user: store.getState().user
   })
 }), 1000)
 

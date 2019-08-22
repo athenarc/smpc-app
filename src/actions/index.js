@@ -16,6 +16,12 @@ import {
   emit
 } from './websocket'
 
+import {
+  login,
+  logout,
+  unauthorized
+} from './authentication'
+
 export default {
   requestHistogram,
   checkComputationStatus,
@@ -25,5 +31,8 @@ export default {
   closeNotification,
   getSingleComputation,
   initWebsocket,
-  emit
+  emit,
+  login,
+  logout,
+  unauthorized
 }
