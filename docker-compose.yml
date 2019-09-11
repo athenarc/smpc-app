@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  app:
+    container_name: smpc_app
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "433:433"
+    volumes:
+      - ./conf.d/:/etc/nginx/conf.d
+      - ./build:/usr/share/nginx/html
+      - /etc/letsencrypt:/etc/letsencrypt
+    networks:
+      - coordinator
