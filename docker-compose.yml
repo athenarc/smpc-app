@@ -12,3 +12,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
     networks:
       - coordinator
+
+networks:
+  coordinator:
+    name: smpc_coordinator
